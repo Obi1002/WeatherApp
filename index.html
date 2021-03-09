@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/css/style.css"/>
+</head>
+<body>
+    <!-- Create the navbar for Weather Dashboard display -->
+    <div class="bg-dark">
+        <h1 class="text-center mb-2 p-2 text-light">Weather Dashboard</h1>
+    </div>
+    <div class="containter-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <form>
+                    <div class="input-group m-2 pre-3">
+                        <!-- create the search bar for cities -->
+                        <input type="text" class="form-control" id="citySearchInput" placeholder="Enter a City">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="citySearchButton"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="w-100">
+                    <ul class="list-group cityList mx-2 mt-3"></ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card shadow m-2">
+                    <div class="card-body cityToday"></div>
+                </div>
+                <div class="m-2">
+                    <!-- create the result area for the city searched -->
+                    <h3>5-Day Forecast:</h3>
+                    <div class="forcast row text-light"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Need to find and add the FONTAWESOME + jQuery -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="Assets/js/script.js"></script>
+</body>
+</html>
