@@ -29,13 +29,14 @@ This project was completed on March 13, 2021.
 MIT
 
 <!-- # Deployment -->
-
-Access this document here: https://github.com/Obi1002/Workday-Planner
+<!-- Add links -->
+Access this app Repo here: https://github.com/Obi1002/XXXX
 [Live Link](https://obi1002.github.io/Workday-Planner/) 
 
-<!-- # Usage -->
-When you open the webpage, you will have a live work day planner presented to you.  Fill in tasks and save.  As your work day progresses, you will be able to visually to see the past hour(s), current hour and future hour(s) all in different colors. Enjoy your new planner!
+# Usage
+When you open the webpage, you will have a live search bar to enter a city of your choice.  Once you enter the city, you can click on the magnifying glass button to the right of the search bar to load the results.  The current city information should be on display and a 5-days forecast should generate under the city display with additional weather forecast. Enjoy your new weather forecast app for any city of your choice!
 
-<!-- # Preview of the App -->
+<!-- Add screenShot -->
+# Preview of the App
 * This is how the app looks
-![Work Day Planner Screenshot](./Assets/WorkdayPlannerScreenshot.PNG)
+![Weather App Screenshot]()
