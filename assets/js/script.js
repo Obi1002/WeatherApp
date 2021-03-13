@@ -3,8 +3,6 @@
 // when I clear the browser data, the page stops functioning
 // when I enter a new city, it doesn't refresh immediately, I have to refresh the page
 // when I enter a new city, the previous city is still listed on the page
-// City name does not appear on page
-// Local storage not working
 
 var cityList = [];
 var id = "1fb9f764719cb87d0d40154ee206bffb";
@@ -49,9 +47,10 @@ function getCurrentWeather(thisCity, id) {
         url: weatherURL,
         method: "GET"
     }).then(function (data) {
+        console.log(data)
         $(".cityToday").append(
             `<div class="row ml-1">
-                <h3 class="mr-3">${data.list} (${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${(new Date(1000 * data.dt).getUTCDate()) - 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
+                <h3 class="mr-3">${data.name} (${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${(new Date(1000 * data.dt).getUTCDate()) - 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
                 <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
             </div>`
         )
@@ -97,13 +96,16 @@ function getForecast(thisCity, id) {
 // call in the getCurrentWeather() to get the uv index for selected city
 function getUVI(id, cityLat, cityLong) {
     var uvURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${cityLat}&lon=${cityLong}&appid=${id}`;
-
+    var color = "secondary"
     $.ajax({
         url: uvURL,
         method: "GET"
     }).then(function (data) {
-        $(".cityToday").append(`<p>UV Index: <span class="badge badge-danger p-2">${data.value}</span></p>`);
-    })
+        if (data.value >= 6 ){color = "danger"}
+        else if (data.value >= 3 ){color = "warning"}
+        else {color = "success"}
+    $(".cityToday").append(`<p>UV Index: <span class="badge badge-${color} p-2">${data.value}</span></p>`);
+            })
 }
 
 // function that clears data + calls both the current and 5-day forecasts for selected city
@@ -126,10 +128,19 @@ $("form").on("submit", function(event) {
     event.preventDefault();
     console.log("it works!")
     var newCity = $("#citySearchInput").val().trim();
+        if (newCity !== "" ) {
     cityList.push(newCity);
+    console.log(newCity);
     createCityList();
     storeCities();
     $("#citySearchInput").val("");
+    // if (cityList) {
+    //     var thisCity = cityList[cityList.length - 1]
+    //     getCurrentWeather(thisCity, id);
+    //     getForecast(thisCity, id);
+    // }
+    location.reload();
+        }
 })
 
 // click event to displayCityWeather()
