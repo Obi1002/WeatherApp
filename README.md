@@ -28,10 +28,9 @@ This project was completed on March 13, 2021.
 # License
 MIT
 
-<!-- # Deployment -->
-<!-- Add links -->
-Access this app Repo here: https://github.com/Obi1002/XXXX
-[Live Link](https://obi1002.github.io/Workday-Planner/) 
+# Deployment
+Access this app Repo here: https://github.com/Obi1002/WeatherApp
+[Live Link](https://obi1002.github.io/WeatherApp/) 
 
 # Usage
 When you open the webpage, you will have a live search bar to enter a city of your choice.  Once you enter the city, you can click on the magnifying glass button to the right of the search bar to load the results.  The current city information should be on display and a 5-days forecast should generate under the city display with additional weather forecast. Enjoy your new weather forecast app for any city of your choice!
@@ -39,4 +38,4 @@ When you open the webpage, you will have a live search bar to enter a city of yo
 <!-- Add screenShot -->
 # Preview of the App
 * This is how the app looks
-![Weather App Screenshot]()
+![Weather App Screenshot](.\Assets\WeatherApp.PNG)
