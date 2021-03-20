@@ -30,7 +30,7 @@ function init() {
 
     createCityList();
 
-    if (cityList) {
+    if (cityList.length>0) {
         var thisCity = cityList[cityList.length - 1]
         getCurrentWeather(thisCity, id);
         getForecast(thisCity, id);
@@ -47,7 +47,6 @@ function getCurrentWeather(thisCity, id) {
         url: weatherURL,
         method: "GET"
     }).then(function (data) {
-        console.log(data)
         $(".cityToday").append(
             `<div class="row ml-1">
                 <h3 class="mr-3">${data.name} (${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${(new Date(1000 * data.dt).getUTCDate()) - 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
